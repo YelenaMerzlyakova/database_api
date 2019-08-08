@@ -1,6 +1,6 @@
 --Use create database statement
 
-CREATE DATABASE IF NOT EXISTS Notes;          --==> a query to create a database with the name Notes
+--CREATE DATABASE IF NOT EXISTS Notes;          --==> a query to create a database with the name Notes
 
 
 --To store the data in a table you you create another query by using a CREATE TABLE statement.
