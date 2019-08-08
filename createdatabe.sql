@@ -7,8 +7,8 @@
 
 CREATE TABLE IF NOT EXISTS Notes (            --==> a query to create a table 
     NotesID   Int(6)  NOT NULL UNIQUE,
-    NotesAuthor    varchar(230) NOT NULL,
-    NotesTitle     varchar(230) NOT NULL,
-    NotesBody      varchar(230),
-    PRIMARY KEY (title),
+    Author    varchar(100) NOT NULL,
+    Title     varchar(230) NOT NULL,
+    Body      varchar(230),
+    PRIMARY KEY (Title),
 )
