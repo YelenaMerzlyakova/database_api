@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS Notes (            --==> a query to create a table
     Author    varchar(100) NOT NULL,
     Title     varchar(230) NOT NULL,
     Body      varchar(230),
-    PRIMARY KEY (title),
+    PRIMARY KEY (Title)
 )
