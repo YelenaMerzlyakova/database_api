@@ -11,7 +11,7 @@ $status = [
 ];
 
 try{
-    $sql = "SELECT * FROM notes ORDER BY id ASC";
+    $sql = "SELECT id, title FROM notes ORDER BY id ASC";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute();
@@ -21,8 +21,8 @@ try{
         array_push($status['notes'], [
             'id' => $note['id'],
             'title' => $note['title'],
-            'author' => $note['author'],
-            'messages' => $note['messages'],
+            //'author' => $note['author'],
+            //'messages' => $note['messages'],
         ]);
     }
 
