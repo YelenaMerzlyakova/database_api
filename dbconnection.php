@@ -1,5 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Request-Headers: *");
 
 // slect the http request method
 $http_method = $_SERVER["REQUEST_METHOD"];
