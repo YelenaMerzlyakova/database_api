@@ -11,7 +11,7 @@ try {
         $db["host"],
         $db["port"],
         $db["user"],
-        $db["pass"],s
+        $db["pass"],
         ltrim($db["path"], "/")
     ));
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
