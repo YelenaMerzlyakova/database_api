@@ -1,9 +1,9 @@
 <?php
 
-header("Access-Control-Allow-Origin: http://127.0.0.1:12918/");
-header("Access-Control-Allow-Headers: access");
-header("Access-Control-Allow-Methods: GET,PUT,DELET,POST");
-header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Headers: access");
+// header("Access-Control-Allow-Methods: GET,PUT,DELET,POST");
+// header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
 include 'dbconnection.php';
