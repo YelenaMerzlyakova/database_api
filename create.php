@@ -1,6 +1,9 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Headers: access");
+// header("Access-Control-Allow-Methods: GET,PUT,DELET,POST");
+// header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
 include 'dbconnection.php';
@@ -14,6 +17,9 @@ $status = [
 ];
 
 $errors = [];
+
+
+//validate 
 
 if ($titleValue == "" || $titleValue == null) {
     $errors['title'] = "title is empty";
@@ -53,5 +59,3 @@ try{
 } catch(PDOException $e){
     die("ERROR: Could not prepare/execute query: $sql. " . $e->getmessages());
 }
-
-?>
