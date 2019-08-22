@@ -5,12 +5,6 @@ header("Access-Control-Allow-Methods: *");
 header('Content-Type: application/json');
 header("Access-Control-Allow-Methods: Content-Type");
 
-// header("Access-Control-Allow-Origin: *");
-// header("Access-Control-Allow-Headers: access");
-// header("Access-Control-Allow-Methods: GET,PUT,DELET,POST");
-// header("Access-Control-Allow-Credentials: true");
-// header('Content-Type: application/json');
-
 include 'dbconnection.php';
 
 $titleValue = filter_var($_POST['title'], FILTER_SANITIZE_STRING);

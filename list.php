@@ -1,6 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Request-Headers: *");
+header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: *");
 header('Content-Type: application/json');
 header("Access-Control-Allow-Methods: Content-Type");
@@ -27,7 +27,7 @@ try{
 
     foreach ($notes as $note) {
         array_push($status['notes'], [
-            'id' => $note['id'],
+            //'id' => $note['id'],
             'title' => $note['title'],
             'author' => $note['author'],
             'messages' => $note['messages'],
