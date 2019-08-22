@@ -23,7 +23,7 @@ try{
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute();
-    $notes = $stmt->fetch();
+    $notes = $stmt->fetchAll();
 
     foreach ($notes as $note) {
         array_push($status['notes'], [
