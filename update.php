@@ -1,25 +1,18 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: *");
-header("Access-Control-Allow-Methods: *");
-header('Content-Type: application/json');
-header("Access-Control-Allow-Methods: Content-Type");
-
-// header("Access-Control-Allow-Origin: *");
-// header("Access-Control-Allow-Headers: access");
-// header("Access-Control-Allow-Methods: GET,PUT,DELET,POST");
-// header("Access-Control-Allow-Credentials: true");
-// header('Content-Type: application/json');
 
 include 'dbconnection.php';
 
-$idValue = filter_var($_POST['id'], FILTER_SANITIZE_STRING);
-$titleValue = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-$authorValue = filter_var($_POST['author'], FILTER_SANITIZE_STRING);
-$messagesValue = filter_var($_POST['messages'], FILTER_SANITIZE_STRING);
+$json = file_get_contents('php://input');
+$data = json_decode($json);
+
+$idValue = filter_var($data->id, FILTER_SANITIZE_STRING);
+$titleValue = filter_var($data->title, FILTER_SANITIZE_STRING);
+$authorValue = filter_var($data->author, FILTER_SANITIZE_STRING);
+$messagesValue = filter_var($data->messages, FILTER_SANITIZE_STRING);
 
 $status = [
     "status" => "success",
+    "notes" => [],
 ];
 
 $errors = [];
@@ -68,7 +61,27 @@ try{
     $stmt->execute();
 
     $status['message'] = "note successfully updated";
-    echo json_encode($status);
 } catch(PDOException $e){
+    die("ERROR: Could not prepare/execute query: $sql. " . $e->getmessages());
+}
+
+try {
+    $sql = "SELECT * FROM notes ORDER BY id ASC";
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute();
+    $notes = $stmt->fetchAll();
+
+    foreach ($notes as $note) {
+        array_push($status['notes'], [
+            'id' => $note['id'],
+            'title' => $note['title'],
+            'author' => $note['author'],
+            'messages' => $note['messages'],
+        ]);
+    }
+
+    echo json_encode($status);
+} catch (PDOException $e) {
     die("ERROR: Could not prepare/execute query: $sql. " . $e->getmessages());
 }
