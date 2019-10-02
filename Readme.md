@@ -9,7 +9,7 @@ possible extensions to the API :
 * delete.php
 * ...
 
-The mission was to create an API that can save notes and later on to add a web interface for it (see my note-app-front-end repository).
+The mission was to create an API that can save notes and later on to add a web interface for it ([see my note-app-front-end repository](https://github.com/YelenaMerzlyakova/vue-app)).
 
 The learning objectives were : 
 
