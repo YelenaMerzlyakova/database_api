@@ -21,6 +21,10 @@ The learning objectives were :
 
 I have used a SQL database (mySQL, phpmyadmin) because it was better structured. Checkout my other repositories for a project with a NoSQL database. 
 
+## Preview
+
+![api](https://github.com/YelenaMerzlyakova/database_api/blob/master/notesapi.png)
+
 
 
 
